@@ -7,12 +7,12 @@ echo "Select the desired operation"
 current_mode=$(cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode)
 if [ $current_mode = "1" ]
 then
-  echo "1. Toggle battery conservation mode (currently ENABLED)"
+  echo "  1. Toggle battery conservation mode (currently ENABLED)"
 else
-  echo "1. Toggle battery conservation mode (currently DISABLED)"
+  echo "  1. Toggle battery conservation mode (currently DISABLED)"
 fi
-echo 6. Check available sleep states
-echo "7. Fix touchpad (only perform once)"
+echo "  6. Check available sleep states"
+echo "  7. Fix touchpad (only perform once)"
 
 #pretty recent addition to the kernel for this device (I think) so if this doesn't work update your kernel, can probably be swapped out for "echo 1 >> yaddayadda" instead of tee
 battery_conserve () {
