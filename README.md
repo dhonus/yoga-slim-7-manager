@@ -38,8 +38,10 @@ quick battery conserve toggle:
 ``./yoga.sh --battery``
 
 ## Notes
-The cooling mode will reset to the current mode selected in the BIOS upon every reboot.
-At this time this laptop works very well in Arch, only requiring a blacklist of "elan_i2c" to fix the touchpad inconsistency (see the touchpad fix in the tool).
+The cooling mode will reset to the current mode selected in the BIOS upon every reboot.  
+
+At this time this laptop works very well in Arch, only requiring a blacklist of "elan_i2c" to fix the touchpad inconsistency (see the touchpad fix in the tool).  
+
 Other distributions should be simple enough to implement, but the laptop doesn't seem to perform too well on older systems.
 
 
