@@ -10,6 +10,8 @@ At this time this laptop works very well in Arch, only requiring a blacklist of 
 
 I am looking into providing a system performance mode switcher (intelligent cooling, battery saving and extreme performance), which has apparently been added in the latest kernel.
 
+refer to [this arch wiki link](https://wiki.archlinux.org/title/Lenovo_IdeaPad_7_14are05) for more details
+
 ### Usage
 
 1. clone or curl this script
