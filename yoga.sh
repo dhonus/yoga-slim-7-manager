@@ -28,7 +28,6 @@ else
 fi
 }
 
-
 cooling_mode () {
   echo "-------------------------"
   echo "The following are the modes available"
