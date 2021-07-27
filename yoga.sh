@@ -62,12 +62,12 @@ cooling_mode () {
 
 ## arguments
 case $1 in
-        "--battery")
-                battery_conserve
-                exit
-                ;;
-        *)
-                ;;
+  "--battery")
+    battery_conserve
+    exit
+    ;;
+  *)
+    ;;
 esac
 
 
