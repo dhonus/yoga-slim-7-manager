@@ -22,4 +22,6 @@ for more advanced features you may need to run the script as root.
 
 ``sudo ./yoga.sh``
 
+quick battery conserve toggle:
 
+``./yoga.sh --battery``
