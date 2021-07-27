@@ -12,7 +12,7 @@ then
 else
   echo "  1. Toggle battery conservation mode (currently DISABLED)"
 fi
-
+echo "  2. Change cooling  mode (current is "$(cat /sys/firmware/acpi/platform_profile)")"
 echo "  6. Check available sleep states"
 echo "  7. Fix touchpad (only perform once)"
 
@@ -27,6 +27,38 @@ else
   sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode <<< 1
 fi
 }
+
+
+cooling_mode () {
+  echo "-------------------------"
+  echo "The following are the modes available"
+  echo $(cat /sys/firmware/acpi/platform_profile_choices)
+  echo "Choose which mode to apply. Currently using $(cat /sys/firmware/acpi/platform_profile)"
+  echo "l - Low Power"
+  echo "b - Balanced (Intelligent Cooling)"
+  echo "p - Performance Mode"
+
+  read MODE
+  case $MODE in
+    "l")
+      echo low-power | sudo tee /sys/firmware/acpi/platform_profile
+      ;;
+    "b")
+      echo balanced | sudo tee /sys/firmware/acpi/platform_profile
+      ;;
+    "p")
+      echo performance | sudo tee /sys/firmware/acpi/platform_profile
+      ;;
+    *)
+    echo "Not a valid argument"
+    echo
+    ;;
+  esac
+  echo "-------------------------"
+  echo "The mode has been set to "$(cat /sys/firmware/acpi/platform_profile)
+
+}
+
 
 ## arguments
 case $1 in
@@ -43,6 +75,9 @@ read OPERATION
 case $OPERATION in
   "1")
     battery_conserve
+    ;;
+  "2")
+    cooling_mode
     ;;
   "6")
     echo "S3 should not be listed. https://wiki.archlinux.org/title/Lenovo_IdeaPad_7_14are05#Power_management"
