@@ -21,14 +21,12 @@ don't forget to reboot!
 
 ``sudo modprobe acpi_call``
 
-
 ## Usage
 
-Run with superuser privileges.
+Use the curl command, or clone this repository and mark the script as executable. Run with superuser privileges.
 
-1. clone or curl this script
-2. ``chmod +x yoga.sh``
-3. ``sudo ./yoga.sh``
+#### Installation
+``curl https://raw.githubusercontent.com/dhonus/yoga-slim-7-manager/main/yoga.sh >> yoga.sh && chmod +x yoga.sh``
 
 
 ``sudo ./yoga.sh``
