@@ -26,7 +26,10 @@ don't forget to reboot!
 Use the curl command, or clone this repository and mark the script as executable. Run with superuser privileges.
 
 #### Installation
-``curl https://raw.githubusercontent.com/dhonus/yoga-slim-7-manager/main/yoga.sh >> yoga.sh && chmod +x yoga.sh``
+``curl https://raw.githubusercontent.com/dhonus/yoga-slim-7-manager/main/yoga.sh >> yoga.sh``
+
+
+``chmod +x yoga.sh``
 
 
 ``sudo ./yoga.sh``
