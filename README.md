@@ -1,6 +1,6 @@
 # yoga-slim-7-manager
 
-This tool serves to toggle a selection of useful features which are hard to get to on Linux. Tested for Arch Linux and should work for its derivatives. Only works for Yoga Slim 7 14ARE05, do not attempt to use this tool without change on a different device. I will very probably add more features to this, this is an early version and may have a few bugs. Please use the latest kernel, the cooling modes are a recent addition.
+This tool serves to toggle a selection of useful features which are hard to get to on Linux. Tested for Arch Linux and Solus. Only works for Yoga Slim 7 14ARE05, do not attempt to use this tool without change on a different device. I will very probably add more features to this, this is an early version and may have a few bugs. Please use kernel version 5.13 or later, the cooling modes are a recent addition.
 
 ## Features
 
