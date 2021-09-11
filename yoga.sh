@@ -1,20 +1,6 @@
 #!/bin/sh
 
-echo "-------------------------"
-echo "Manage Lenovo Yoga Slim 7"
-echo "-------------------------"
-echo "Select the desired operation"
-
 current_mode=$(cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode)
-if [ $current_mode = "1" ]
-then
-  echo "  1. Toggle battery conservation mode (currently ENABLED)"
-else
-  echo "  1. Toggle battery conservation mode (currently DISABLED)"
-fi
-echo "  2. Change cooling  mode (current is "$(cat /sys/firmware/acpi/platform_profile)")"
-echo "  6. Check available sleep states"
-echo "  7. Fix touchpad (only perform once)"
 
 #pretty recent addition to the kernel for this device (I think) so if this doesn't work update your kernel, can probably be swapped out for "echo 1 >> yaddayadda" instead of tee
 battery_conserve () {
@@ -27,6 +13,32 @@ else
   sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode <<< 1
 fi
 }
+
+## arguments
+case $1 in
+  "--battery")
+    battery_conserve
+    exit
+    ;;
+  *)
+    ;;
+esac
+
+echo "-------------------------"
+echo "Manage Lenovo Yoga Slim 7"
+echo "-------------------------"
+echo "Select the desired operation"
+
+if [ $current_mode = "1" ]
+then
+  echo "  1. Toggle battery conservation mode (currently ENABLED)"
+else
+  echo "  1. Toggle battery conservation mode (currently DISABLED)"
+fi
+echo "  2. Change cooling  mode (current is "$(cat /sys/firmware/acpi/platform_profile)")"
+echo "  6. Check available sleep states"
+echo "  7. Fix touchpad (only perform once)"
+
 
 cooling_mode () {
   echo "-------------------------"
@@ -57,18 +69,6 @@ cooling_mode () {
   echo "The mode has been set to "$(cat /sys/firmware/acpi/platform_profile)
 
 }
-
-
-## arguments
-case $1 in
-  "--battery")
-    battery_conserve
-    exit
-    ;;
-  *)
-    ;;
-esac
-
 
 read OPERATION
 case $OPERATION in
